@@ -22,7 +22,7 @@ describe "permutations?" do
     expect(permutations?("pizza", "piza")).must_equal false
   end
 
-  it "returns false if the number of a specific letter are different when the strings lengths are the same" do
+  it "returns false if the number of a specific letter are different but the string lengths are the same" do
     expect(permutations?("pizza", "pizaa")).must_equal false
   end
 end
