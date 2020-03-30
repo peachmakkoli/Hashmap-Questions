@@ -1,5 +1,4 @@
 def permutations?(string1, string2)
-  # return true if strings are equal; return false if the strings are not the same length
   return true if string1 == string2
   return false if string1.length != string2.length
   
@@ -7,32 +6,20 @@ def permutations?(string1, string2)
   lookup_hash = {}
   letter_count1 = {}
   string1.each_char do |char|
-    if lookup_hash[char]
-      lookup_hash[char] = false
-    else
-      lookup_hash[char] = true
-    end
+    lookup_hash[char] ? lookup_hash[char] = false : lookup_hash[char] = true
 
-    if letter_count1[char]
-      letter_count1[char] += 1
-    else
-      letter_count1[char] = 0
-    end
+    letter_count1[char] ? letter_count1[char] += 1 : letter_count1[char] = 0 # counts how many of each letter are in string1
   end
 
+  # counts how many of each letter are in string2
   letter_count2 = {}
   string2.each_char do |char|
-    if letter_count2[char]
-      letter_count2[char] += 1
-    else
-      letter_count2[char] = 0
-    end
+    letter_count2[char] ? letter_count2[char] += 1 : letter_count2[char] = 0
   end
 
-  # returns false if the number of a specific letter are different, but the string lengths are the same
-  return false if letter_count1 != letter_count2
+  return false if letter_count1 != letter_count2 # returns false if the number of a specific letter are different but the string lengths are the same (see comment in test file)
 
-  # lookup each char in string2 in the hash table; if the value of lookup_hash[num] is nil, return false; else return true
+  # lookup each char in string2 in the hash table
   string2.each_char do |char|
     return false if lookup_hash[char].nil?
   end

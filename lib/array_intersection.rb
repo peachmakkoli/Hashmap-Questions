@@ -1,18 +1,13 @@
 def intersection(list1, list2)
-  # define which array is the smallest and which is the largest
-  list1.length < list2.length ? (smaller, larger = list1, list2) : (smaller, larger = list2, list1)
+  list1.length < list2.length ? (smaller, larger = list1, list2) : (smaller, larger = list2, list1) # define which array is the smallest and which is the largest
   
-  # Add each element from the smaller array to the hash table
+  # add each element from the smaller array to the hash table
   lookup_hash = {}
   smaller.each do |num|
-    if lookup_hash[num]
-      lookup_hash[num] = false
-    else
-      lookup_hash[num] = true
-    end
+    lookup_hash[num] ? lookup_hash[num] = false : lookup_hash[num] = true
   end
 
-  # Lookup each element in the larger array in the hash table; if it’s found in the hash table, add it to the results array
+  # lookup each element in the larger array in the hash table; add to results array if found
   results = []
   larger.each do |num|
     results << num if lookup_hash[num]
