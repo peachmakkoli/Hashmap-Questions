@@ -1,12 +1,16 @@
 require_relative "test_helper"
 
 describe "palindrome_permutation?" do
-  it "will work for hello" do
+  it "will return false for hello" do
     expect(palindrome_permutation?("hello")).must_equal false
   end
 
   it "will work for 'carrace'" do
     expect(palindrome_permutation?("carrace")).must_equal true
+  end
+
+  it "will work for 'noon'" do
+    expect(palindrome_permutation?("noon")).must_equal true
   end
 
   it "will work for emptystring" do
