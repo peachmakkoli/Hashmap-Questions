@@ -11,10 +11,12 @@ def palindrome_permutation?(string)
       lookup_hash[char] = true
     end
   end
-
-  # if the string has an even number of characters, the palindrome should have two of each letter
-  if (string.length).even?
+  
+  if string.length.even? # if the string has an even number of characters, the palindrome should have two of each letter
     return true if lookup_hash.length == string.length / 2
+  elsif string.length.odd? # if the string has an odd number of characters, the palindrome should have only one odd letter out
+    return true if lookup_hash.length == (string.length / 2) + 1
   end
-  # if the string has an odd number of characters, the palindrome should have only one odd letter out
+
+  return false
 end
