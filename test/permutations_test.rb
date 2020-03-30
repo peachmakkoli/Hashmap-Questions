@@ -1,6 +1,6 @@
 require_relative "test_helper"
 
-xdescribe "permutations?" do
+describe "permutations?" do
   it "returns true for empty string" do
     expect(permutations?("", "")).must_equal true
   end
@@ -14,6 +14,10 @@ xdescribe "permutations?" do
   end
 
   it "returns true for 'pizza', 'pizza'" do
+    expect(permutations?("pizza", "pizza")).must_equal true
+  end
+
+  it "returns false for 'pizza', 'pasta'" do
     expect(permutations?("pizza", "pasta")).must_equal false
   end
 
