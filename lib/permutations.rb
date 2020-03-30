@@ -13,5 +13,11 @@ def permutations?(string1, string2)
       lookup_hash[char] = true
     end
   end
-  # lookup each char in string2 in the hash table; if it's found, return true; else return false
+
+  # lookup each char in string2 in the hash table; if the value of lookup_hash[num] is nil, return false; else return true
+  string2.each_char do |char|
+    return false if lookup_hash[char].nil?
+  end
+
+  return true
 end
