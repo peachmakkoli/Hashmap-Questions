@@ -7,7 +7,9 @@ def palindrome_permutation?(string)
     lookup_hash[char] ? lookup_hash[char] = false : lookup_hash[char] = true
   end
 
-  if string.length.even? # the palindrome should have two of each letter 
+  if lookup_hash.length == 1 # palindromes of any length that are made up of the same letter
+    return true 
+  elsif string.length.even? # the palindrome should have two of each letter 
     return lookup_hash.length == string.length / 2
   elsif string.length.odd? # the palindrome should have only one odd letter out
     return lookup_hash.length == (string.length / 2) + 1
