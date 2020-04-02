@@ -25,7 +25,6 @@ describe "palindrome_permutation?" do
     expect(palindrome_permutation?("oooo")).must_equal true
   end
 
-
   it "will return false for raceca" do
     expect(palindrome_permutation?("raceca")).must_equal false
   end   
