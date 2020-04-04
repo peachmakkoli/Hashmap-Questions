@@ -5,13 +5,13 @@ def permutations?(string1, string2)
   # add each char from string1 to the hash table
   letter_count1 = {}
   string1.each_char do |char|
-    letter_count1[char] ? letter_count1[char] += 1 : letter_count1[char] = 0 # counts how many of each letter are in string1
+    letter_count1[char] ? letter_count1[char] += 1 : letter_count1[char] = 1 # counts how many of each letter are in string1
   end
 
   # counts how many of each letter are in string2
   letter_count2 = {}
   string2.each_char do |char|
-    letter_count2[char] ? letter_count2[char] += 1 : letter_count2[char] = 0
+    letter_count2[char] ? letter_count2[char] += 1 : letter_count2[char] = 1
   end
 
   return false if letter_count1 != letter_count2 # returns false if the number of a specific letter are different but the string lengths are the same (see comment in test file)
